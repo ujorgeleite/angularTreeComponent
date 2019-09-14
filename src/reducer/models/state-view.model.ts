@@ -1,5 +1,5 @@
-import { PersonViewModel } from './PersonViewModel';
-import { ErrorViewModel } from './ErrorViewModel';
+import { PersonViewModel } from '../../app/models/person-view.model';
+import { ErrorViewModel } from './error-view.model';
 
 export interface StateViewModel {
     entities: PersonViewModel [];
