@@ -31,7 +31,7 @@ describe('ReadFileService', () => {
   describe('Given that the metho get Persons is called', () => {
     let result;
 
-    beforeAll(async () => {
+    beforeEach(async () => {
       result = await service.getPersons().toPromise();
     });
 
