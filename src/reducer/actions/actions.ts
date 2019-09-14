@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
-import { PersonViewModel } from '../models/PersonViewModel';
-import { ErrorViewModel } from '../models/ErrorViewModel';
+import { PersonViewModel } from '../../app/models/person-view.model';
+import { ErrorViewModel } from '../models/error-view.model';
 
 export const READ_LIST = '[angularTreeComponent] ReadList';
 export const UPDATE_LIST = '[angularTreeComponent] UpdateList';

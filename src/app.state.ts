@@ -1,5 +1,5 @@
-import { PersonViewModel } from './reducer/models/PersonViewModel';
-import { StateViewModel } from './reducer/models/StateViewModel';
+
+import { StateViewModel } from './reducer/models/state-view.model';
 
 export interface AppState {
   readonly personState: StateViewModel;

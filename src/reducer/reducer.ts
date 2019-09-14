@@ -1,8 +1,7 @@
 import * as PersonActions from './actions/actions';
-import { StateViewModel } from './models/StateViewModel';
-import { map as mapError } from './mappers/mapErrorState.mapper';
-import { map as mapState } from './mappers/mapState.mapper';
-
+import { StateViewModel } from './models/state-view.model';
+import { map as mapError } from './mappers/map-error-state.mapper';
+import { map as mapState } from './mappers/map-state.mapper';
 
 
 export const initialState: StateViewModel = {
