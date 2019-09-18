@@ -1,0 +1,14 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <mat-selection-list>
+                <mat-list-option checkboxPosition="before">
+                    <p>{{ person?.name }}</p>
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+ <app-person [person]="children"  *ngFor="let children of person?.childrens;"></app-person>
+
+</mat-expansion-panel>
