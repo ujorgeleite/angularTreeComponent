@@ -1,15 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PersonComponent } from '../person/person.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { RouterTestingModule } from '@angular/router/testing';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list';
 import { MatTreeModule } from '@angular/material/tree';
-import { Store } from '@ngrx/store';
 import { of, throwError } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 
 import { getEntitiePersons, getInitialStateView } from './person-list.mock';
@@ -17,6 +18,8 @@ import { ReadFileService } from '../services/read-file.service';
 import { PersonListComponent } from './person-list.component';
 import { PersonListStub as stub } from './person-list.stub';
 import { ErrorHandlerAction } from 'src/reducer/actions/actions';
+import { PersonRootComponent } from '../person-root/person-root.component';
+import { PersonChildComponent } from '../person-child/person-child.component';
 
 describe('PersonListComponent', () => {
   let component: PersonListComponent;
@@ -40,8 +43,13 @@ describe('PersonListComponent', () => {
       providers: [
         { provide: Store, useClass: stub },
         { provide: ReadFileService, useClass: stub },
+
       ],
-      declarations: [PersonListComponent]
+      declarations: [
+        PersonListComponent,
+        PersonRootComponent,
+        PersonChildComponent,
+        PersonComponent]
     });
 
     readFileService = TestBed.get(ReadFileService);

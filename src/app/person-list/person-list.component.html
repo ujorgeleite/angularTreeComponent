@@ -1,23 +1,6 @@
-<p>person-list works!</p>
 
-<mat-expansion-panel>
-    <mat-expansion-panel-header>
-        <mat-selection-list>
-            <mat-list-option checkboxPosition="before">
-                Richard Paul M.
-            </mat-list-option>
-        </mat-selection-list>
-    </mat-expansion-panel-header>
-
-    <div class="right">       
-
-        <mat-selection-list #persons *ngIf="(stateView | async) as state;">            
-            <mat-list-option checkboxPosition="before" *ngFor="let person of state.entities"
-                selected="{{person.selected}}">
-                {{person.name}}
-            </mat-list-option>
-        </mat-selection-list>
+<div *ngIf="(stateView | async) as state;">
+    <div *ngFor="let person of state.entities;">
+        <app-person [person]="person" *ngIf="person;"></app-person>       
     </div>
-
-
-</mat-expansion-panel>
+</div>
