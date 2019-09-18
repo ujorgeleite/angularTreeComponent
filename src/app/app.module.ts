@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
-import { MatTreeModule } from '@angular/material/tree';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
@@ -16,12 +15,18 @@ import { ApiService } from './services/api.service';
 import { ApiRestService } from './rest-services/api-rest.service';
 import { PersonListComponent } from './person-list/person-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PersonComponent } from './person/person.component';
+import { PersonRootComponent } from './person-root/person-root.component';
+import { PersonChildComponent } from './person-child/person-child.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonListComponent
+    PersonListComponent,
+    PersonComponent,
+    PersonRootComponent,
+    PersonChildComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MatExpansionModule,
     MatListModule,
-    MatTreeModule,
     MatCheckboxModule,
     StoreModule.forRoot({
       persons: reducer
@@ -41,6 +45,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ApiService,
     ApiRestService
   ],
+  exports: [
+    PersonComponent,
+    PersonRootComponent,
+    PersonChildComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
