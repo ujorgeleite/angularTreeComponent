@@ -4,6 +4,7 @@ import { ErrorViewModel } from '../models/error-view.model';
 
 export const READ_LIST = '[angularTreeComponent] ReadList';
 export const UPDATE_LIST = '[angularTreeComponent] UpdateList';
+export const UPDATE_PERSON = '[angularTreeComponent] UpdatePerson';
 export const ERROR_HANDLER = '[angularTreeComponent] ErroHandler';
 
 
@@ -20,6 +21,12 @@ export class UpdateListAction implements Action {
     constructor(public payload: PersonViewModel[]) { }
 }
 
+export class UpdatePersonAction implements Action {
+    readonly type = UPDATE_PERSON;
+
+    constructor(public payLoad: PersonViewModel) { }
+}
+
 
 export class ErrorHandlerAction implements Action {
     readonly type = ERROR_HANDLER;
@@ -28,4 +35,4 @@ export class ErrorHandlerAction implements Action {
 }
 
 
-export type Actions = ReadListAction | UpdateListAction | ErrorHandlerAction;
+export type Actions = ReadListAction | UpdateListAction | ErrorHandlerAction | UpdatePersonAction;
